@@ -1,11 +1,21 @@
 import logo from './logo.svg';
 import './App.css';
+import Searchbar from './components/Searchbar';
+import Button from './components/Button';
+import { IconWithBadge, UserIcon } from './components/Icon';
+import Logo from './components/Logo';
+import Navbar from './components/Navbar';
 
 function App() {
   return (
     <div className="App">
+      <Navbar />
       <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
+        {/* <Searchbar/> */}
+        <Button>Create Post</Button>
+        <IconWithBadge icon="bell" amt="3"/>
+        <UserIcon />
+        <Logo />
         <p>
           Edit <code>src/App.js</code> and save to reload.
         </p>

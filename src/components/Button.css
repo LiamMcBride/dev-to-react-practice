@@ -1,0 +1,19 @@
+button {
+    font-size: 16px;
+    padding: 7px 15px;
+    border-radius: 0.375rem;
+    border: 1px solid rgb(47, 58, 178);
+    color: rgb(47, 58, 178);
+    background-color: white;
+    font-weight: 500;
+    height: 40px;
+    min-width: 117px;
+    margin-right: 8px;
+}
+
+button:hover {
+    cursor: pointer;
+    background-color: rgb(47, 58, 178);
+    color: white;
+    text-decoration: underline;
+}
