@@ -8,11 +8,15 @@ function Navbar() {
   return (
     <div className="navbar">
         <div className="navbar-child">
-            <Logo />
-            <Searchbar/>
-            <Button>Create Post</Button>
-            <IconWithBadge icon="bell" amt="3"/>
-            <UserIcon />
+            <div className="flex-child left-child">
+                <Logo />
+                <Searchbar/>
+            </div>
+            <div className="flex-child right-child">
+                <Button>Create Post</Button>
+                <IconWithBadge icon="bell" amt="3"/>
+                <UserIcon />
+            </div>
         </div>
     </div>
   );

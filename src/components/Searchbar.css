@@ -10,7 +10,8 @@
     margin: 0 1rem;
     height: 40px;
     max-width: 680px;
-    /* flex-grow: 1; */
+    /* min-width: 300px; */
+    flex-shrink: 1;
 }
 
 .searchbar:focus-within {

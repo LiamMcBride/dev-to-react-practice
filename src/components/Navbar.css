@@ -1,15 +1,30 @@
 .navbar  {
     padding: 0 8px;
-    display: flex;
-    justify-content: space-around;
+    /* display: flex;
+    justify-content: space-around; */
+    margin: 0 auto;
+    max-width: 1380px;
+
 }
 
 .navbar-child {
     display: flex;
     width: 100%;
-    justify-content: space-around;
+    justify-content: space-between;
     align-items: center;
     padding: 0px 0px;
     height: 56px;
-    max-width: 1380px;
+}
+
+.flex-child {
+    display: flex;
+}
+
+.left-child {
+    flex-grow: 2;
+}
+
+.right-child {
+    flex-grow: 1;
+    justify-content: right;
 }
