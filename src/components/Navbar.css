@@ -2,9 +2,11 @@
     padding: 0 16px;
     /* display: flex;
     justify-content: space-around; */
-    margin: 0 auto;
-    max-width: 1364px;
+    margin: 0 0;
+    /* max-width: 1364px; */
+    /* width: 100vw; */
     border-bottom: solid 1px rgb(193, 193, 193);
+    background-color: white;
 }
 
 .navbar-child {

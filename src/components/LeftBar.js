@@ -1,4 +1,4 @@
-import Icon, {IconButton, IconWithCounter} from './Icon';
+import {IconButton, IconWithCounter} from './Icon';
 import './LeftBar.css';
 
 function LeftBar() {

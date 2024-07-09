@@ -1,4 +1,3 @@
-import Icon from "./Icon";
 import "./Button.css"
 
 function Button(props) {

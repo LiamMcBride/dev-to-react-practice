@@ -39,6 +39,8 @@
 }
 
 .icon-with-counter {
+    background: white;
+    border: none;
     padding: 1px 6px;
 }
 
@@ -52,16 +54,48 @@
     font-size: 14px;
 }
 
+.icon-with-counter:hover {
+    cursor: pointer;
+}
+
+.icon-with-counter:hover .heart-add path {
+    stroke: red;
+}
+
+.icon-with-counter:hover .message path {
+    stroke: orange;
+}
+
+.icon-with-counter:hover .bookmark path {
+    stroke: rgb(47, 58, 178);
+}
+
 .flip {
     transform: scaleX(-1)
 }
 
 .icon-button {
+    width: 40px;
+    min-height: 40px;
+    padding: 0px;
     border: none;
+    border-radius: 50%;
     background-color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .icon-button:hover {
     cursor: pointer;
-    background-color: gray;
+    background-color: rgba(0, 0, 0, 0.035);
 }
+
+.icon-button .icon {
+    border-radius: 50%;
+}
+
+.icon-button:hover .more rect {
+    fill: rgba(0, 0, 0, 0);
+}
+
