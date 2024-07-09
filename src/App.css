@@ -1,5 +1,6 @@
 .App {
   text-align: center;
+  height: calc(100vh - 56px);
 }
 
 .App-logo {
@@ -35,4 +36,45 @@
   to {
     transform: rotate(360deg);
   }
+}
+
+.main-flex-layout  {
+  padding: 0 8px;
+  /* display: flex;
+  justify-content: space-around; */
+  margin: 0 auto;
+  max-width: 1380px;
+  border-bottom: solid 1px rgb(193, 193, 193);
+  height: 100%;
+}
+
+.main-flex-layout-child {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  align-items: stretch;
+  padding: 0px 0px;
+  height: 100%;
+
+}
+
+.div-1, .div-2, .div-3 {
+  display: block;
+  background-color: red;
+}
+
+.div-1 {
+  width: 64px;
+}
+
+.div-2 {
+  flex-grow: 2;
+  max-width: 876px;
+  min-width: 690px;
+}
+
+.div-3 {
+  flex-grow: 1;
+  min-width: 264px;
+  max-width: 375px;
 }

@@ -1,10 +1,10 @@
 .navbar  {
-    padding: 0 8px;
+    padding: 0 16px;
     /* display: flex;
     justify-content: space-around; */
     margin: 0 auto;
-    max-width: 1380px;
-
+    max-width: 1364px;
+    border-bottom: solid 1px rgb(193, 193, 193);
 }
 
 .navbar-child {

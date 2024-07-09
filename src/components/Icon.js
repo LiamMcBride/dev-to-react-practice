@@ -1,15 +1,45 @@
 import "./Icon.css"
 import searchSVG from "../images/search-svgrepo-com.svg";
 import bellSVG from "../images/bell-alt-1-svgrepo-com.svg";
+import heartAddSVG from "../images/heart-add.svg";
+import messageSVG from "../images/message.svg";
+import bookmarkSVG from "../images/bookmark.svg";
+import moreSVG from "../images/more.svg";
+
+function CustomSVG({icon}){
+  if(icon === "bookmark" || true){
+    return (
+      <svg width="800px" height="800px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M5 6.2C5 5.07989 5 4.51984 5.21799 4.09202C5.40973 3.71569 5.71569 3.40973 6.09202 3.21799C6.51984 3 7.07989 3 8.2 3H15.8C16.9201 3 17.4802 3 17.908 3.21799C18.2843 3.40973 18.5903 3.71569 18.782 4.09202C19 4.51984 19 5.07989 19 6.2V21L12 16L5 21V6.2Z" stroke="#000000" stroke-width="2" stroke-linejoin="round"/>
+      </svg>
+    )
+  }
+}
 
 const iconList = {
     "search": searchSVG,
-    "bell": bellSVG
+    "bell": bellSVG,
+    "heart-add": heartAddSVG,
+    "message": messageSVG,
+    "bookmark": bookmarkSVG,
+    "more": moreSVG
 }
 
 function Icon(props) {
+  let classList = "icon"
+
+  if (props.icon === "message"){
+    classList += " flip"
+  }
+
+  console.log(classList)
+
   return (
-    <img src={iconList[props.icon]} width="24" height="24" className="icon">
+    <img src={iconList[props.icon]} width="22" height="22" className={classList}>
+    </img>
+  );
+  return (
+    <img src={iconList[props.icon]} width="22" height="22" className={classList}>
     </img>
   );
 }
@@ -36,6 +66,23 @@ export function UserIcon() {
   return (
     <div className="user-icon">
   </div>
+  )
+}
+
+export function IconWithCounter({icon, amt}) {
+  return (
+    <div className="icon-with-counter">
+      <Icon icon={icon}/>
+      <div className="counter">{amt}</div>
+    </div>
+  )
+}
+
+export function IconButton({icon}) {
+  return (
+    <button className="icon-button">
+      <Icon icon={icon}/>
+    </button>
   )
 }
 

@@ -1,0 +1,12 @@
+.leftBar {
+    user-select: none;
+    margin-top: 64px;
+    width: 64px;
+    height: 200px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    position: sticky;
+    align-items: center;
+    gap: 1rem;
+}

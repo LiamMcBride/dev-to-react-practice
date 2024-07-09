@@ -5,29 +5,19 @@ import Button from './components/Button';
 import { IconWithBadge, UserIcon } from './components/Icon';
 import Logo from './components/Logo';
 import Navbar from './components/Navbar';
+import LeftBar from './components/LeftBar';
 
 function App() {
   return (
     <div className="App">
       <Navbar />
-      <header className="App-header">
-        {/* <Searchbar/> */}
-        <Button>Create Post</Button>
-        <IconWithBadge icon="bell" amt="3"/>
-        <UserIcon />
-        <Logo />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <div className="main-flex-layout">
+        <div className="main-flex-layout-child">
+          <LeftBar/>
+          <div className="div-2">2</div>
+          <div className="div-3">3</div>
+        </div>
+      </div>
     </div>
   );
 }

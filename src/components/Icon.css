@@ -10,6 +10,11 @@
     /* flex-basis: auto; */
 }
 
+.icon {
+    width: 30px;
+    height: 30px;
+}
+
 
 
 .badge {
@@ -31,4 +36,32 @@
     border-radius: 50%;
     display: block;
     /* flex-basis: auto; */
+}
+
+.icon-with-counter {
+    padding: 1px 6px;
+}
+
+.icon-with-counter .icon {
+    width: 24px;
+    height: 24px;
+    padding: 8px;
+}
+
+.icon-with-counter .counter{
+    font-size: 14px;
+}
+
+.flip {
+    transform: scaleX(-1)
+}
+
+.icon-button {
+    border: none;
+    background-color: white;
+}
+
+.icon-button:hover {
+    cursor: pointer;
+    background-color: gray;
 }
