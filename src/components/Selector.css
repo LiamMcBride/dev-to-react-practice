@@ -1,0 +1,59 @@
+.selector {
+    display: flex;
+    align-items: center;
+    position: relative;
+}
+
+.selector h2, .selector h3{
+    margin: 0;
+}
+
+.selector-window {
+    background-color: white;
+    border: solid 1px #f2f2f2;
+    border-radius: 0.375rem;
+    margin: 4px 0 0 0;
+    padding: 16px;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    max-width: 300px;
+    z-index: 1;
+}
+
+.selector-window h3{
+    margin-bottom: 16px;
+    font-size: 1.17em;
+}
+
+.selector-option {
+    padding: 8px 8px 0 32px;
+    position: relative;
+    border-radius: 0.375rem;
+    border: none;
+    background-color: white;
+    text-align: left;
+}
+
+.selector-option h3, .selector-window p {
+    margin: 0;
+}
+
+.selector-option h3 {
+    font-size: 1rem;
+}
+
+.selector-option:hover {
+    cursor: pointer;
+    background-color: rgba(70, 150, 255, 0.15);
+}
+
+.selector-window p {
+    font-size: 0.875rem;
+}
+
+.selector-option .icon {
+    position: absolute;
+    left: 0;
+    top: 8px;
+}
