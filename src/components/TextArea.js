@@ -1,17 +1,20 @@
-import { IconButton } from './Icon';
+import Icon, { IconButton } from './Icon';
 import './TextArea.css';
-import {useRef} from 'react'
+import {useRef, useState} from 'react'
 
 function TextArea() {
 
     const textRef = useRef(null)
+    const [window, setWindow] = useState(true)
 
     const handleBold = (repText, rep2Text="") => {
+        setWindow(false)
+        
         if (rep2Text === ""){
             rep2Text = repText
         }
 
-        var sel = window.getSelection()
+        var sel = getSelection()
         var selText = sel.toString()
 
         sel.deleteFromDocument()
@@ -23,6 +26,18 @@ function TextArea() {
         // console.log(`Before: ${before}\nAfter: ${after}\nPos: ${pos}\nPos2: ${pos_2}`)
         textRef.current.value = before + repText + selText + rep2Text + after
     }
+
+    const MoreWindow = () => {
+        return (
+            <div className="more-window">
+                <IconButton handleClick={() => handleBold("<u>", "</u>")} icon="underline" shape="square icon-40"/>
+                <IconButton handleClick={() => handleBold("~~")} icon="strikethrough" shape="square icon-40"/>
+                <IconButton handleClick={() => handleBold("\n\n---\n", "\n")} icon="separator" shape="square icon-40"/>
+                <IconButton icon="help" shape="square icon-40"/>
+            </div>
+        )
+    }
+
     //Hi my name is Liam and this is my text editor
     const ToolBar = () => {
         return (
@@ -38,17 +53,19 @@ function TextArea() {
                 <IconButton handleClick={() => handleBold("\n\n```\n", "\n```\n")} icon="code-block" shape="square icon-40"/>
                 <IconButton handleClick={() => handleBold("{% embed ", " %}")} icon="embed" shape="square icon-40"/>
                 {/* <IconButton handleClick={() => handleBold("**")} icon="photo" shape="square icon-40"/> */}
-                <IconButton handleClick={() => handleBold("**")} icon="more" shape="square icon-40 right"/>
+                <IconButton handleClick={() => setWindow(!window)} icon="more" shape="square icon-40 right"/>
+                {window ? <MoreWindow /> : null}
             </div>
         )
     }
 
+    
+
 
   return (
     <div className="custom-textarea">
-        <textarea ref={textRef}>
-        </textarea>
-            <ToolBar />
+        <textarea placeholder="Add to the discussion" ref={textRef}></textarea>
+        <ToolBar />
         
     </div>
   );

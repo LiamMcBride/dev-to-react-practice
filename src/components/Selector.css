@@ -11,6 +11,7 @@
 .selector-window {
     background-color: white;
     border: solid 1px #f2f2f2;
+    box-shadow: 0px 1px 10px gray;
     border-radius: 0.375rem;
     margin: 4px 0 0 0;
     padding: 16px;
