@@ -33,3 +33,17 @@
     border-width: 2px;
     text-decoration: none;
 }
+
+.username-button {
+    border: none;
+    background-color: white;
+    font-size: 16px;
+    color: #3d3d3d;
+    padding: 4px;
+    margin: -4px 0 -4px -4px;
+
+}
+
+.username-button:hover {
+    cursor: pointer;
+}

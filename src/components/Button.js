@@ -16,4 +16,12 @@ export function DarkenButton(props) {
   );
 }
 
+export function UsernameButton(props) {
+  return (
+    <button className="username-button">
+        {props.children}
+    </button>
+  );
+}
+
 export default Button;

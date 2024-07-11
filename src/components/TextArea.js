@@ -5,7 +5,7 @@ import {useRef, useState} from 'react'
 function TextArea() {
 
     const textRef = useRef(null)
-    const [window, setWindow] = useState(true)
+    const [window, setWindow] = useState(false)
 
     const handleBold = (repText, rep2Text="") => {
         setWindow(false)
