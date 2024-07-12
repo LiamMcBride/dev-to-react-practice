@@ -47,3 +47,35 @@
 .username-button:hover {
     cursor: pointer;
 }
+
+.accent-button {
+    background-color: #3b49df;
+    color: white;
+}
+
+.accent-button:hover {
+    background-color: rgb(32, 40, 123)
+}
+
+.accent-button, .secondary-button {
+    font-size: 16px;
+    margin-right: 8px;
+    padding: 8px 16px;
+    border-radius: 0.375rem;
+    border: none;
+    height: 40px;
+    font-weight: 600;
+}
+
+.secondary-button {
+    color: #3d3d3d;
+    background-color: #d6d6d7;
+}
+
+.secondary-button:hover {
+
+}
+
+.horizontal-icon-button {
+    
+}

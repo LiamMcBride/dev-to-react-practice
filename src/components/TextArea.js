@@ -1,6 +1,7 @@
 import Icon, { IconButton } from './Icon';
 import './TextArea.css';
 import {useRef, useState} from 'react'
+import { AccentButton, SecondaryButton } from './Button.js'
 
 function TextArea() {
 
@@ -66,6 +67,10 @@ function TextArea() {
     <div className="custom-textarea">
         <textarea placeholder="Add to the discussion" ref={textRef}></textarea>
         <ToolBar />
+        <div className="comment-buttons">
+            <AccentButton>Submit</AccentButton>
+            <SecondaryButton>Preview</SecondaryButton>
+        </div>
         
     </div>
   );

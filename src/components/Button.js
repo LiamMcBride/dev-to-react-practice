@@ -24,4 +24,20 @@ export function UsernameButton(props) {
   );
 }
 
+export function AccentButton(props) {
+  return (
+    <button className="accent-button">
+      {props.children}
+    </button>
+  )
+}
+
+export function SecondaryButton(props){
+  return (
+    <button className="secondary-button">
+      {props.children}
+    </button>
+  )
+}
+
 export default Button;

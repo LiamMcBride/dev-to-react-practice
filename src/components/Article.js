@@ -1,5 +1,5 @@
 import './Article.css';
-import { UsernameButton, DarkenButton } from './Button';
+import { UsernameButton, DarkenButton, AccentButton, SecondaryButton } from './Button';
 import { IconButton, UserIcon } from './Icon';
 import Image from './Image.js';
 import Selector from './Selector';
@@ -92,7 +92,8 @@ function Comment({com}) {
                         </div>
                         <p className="comment-message">{com.message}</p>
                     </div>
-                    <div className="comment-social-buttons">
+                    <div className="comment-footer">
+                        hi
                         {/* make horizontal icon button with number and label */}
                     </div>
                 </div>

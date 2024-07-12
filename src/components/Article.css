@@ -132,6 +132,7 @@
 
 .top-comment {
     flex-direction: row;
+    margin-bottom: 24px;
 }
 
 .comment-info {
@@ -183,5 +184,9 @@
 
 .comment .comment-replies {
     padding-left: 28px;
+}
+
+.comment-footer {
+    padding-top: 8px;
 }
 

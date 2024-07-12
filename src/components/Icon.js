@@ -57,4 +57,13 @@ export function IconButton({ icon, shape="", handleClick }) {
   )
 }
 
+export function HorizontalIconButton({children, icon, shape="", handleClick }) {
+  return (
+    <button className={"horizontal-icon-button" + shape}>
+      {children}
+      <Icon icon={icon}></Icon>
+    </button>
+  )
+}
+
 export default Icon;
