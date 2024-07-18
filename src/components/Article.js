@@ -5,6 +5,8 @@ import Image from './Image.js';
 import Selector from './Selector';
 import TextArea from './TextArea';
 
+import {useState} from 'react'
+
 function AuthorName({ name }) {
     return (
         <a href="https://google.com" className="author-name">
@@ -74,13 +76,31 @@ function ArticleBody(props) {
 
 function Comment({com}) {
 
-    console.log(com.date)
+    const [collapsed, setCollapsed] = useState(false)
+
+    // const children = () => {
+    //     if(com.replies.length > 0){
+    //         return (
+    //             com.
+    //         )
+    //     }
+    // }
+
+    if(collapsed){
+        return (
+            <button onClick={() => setCollapsed(!collapsed)} className="collapsed-comment">
+                <IconButton icon="expand" shape="no-background icon-24 no-hover"/>
+                {`${com.name} ${com.replies.length > 0 ?  `+   ${com.replies.length} ${com.replies.length == 1 ? "reply" : "replies"}` : ""}`}
+            </button>
+        )
+    }
+
     return (
         <div className="comment">
             <div className="top-comment">
                 <div className="comment-avatar-collapse">
                     <UserIcon />
-                    <IconButton icon="more" />
+                    <IconButton handleClick={() => setCollapsed(!collapsed)} icon="collapse" shape="white-background no-hover"/>
                 </div>
                 <div className="comment-info">
                     <div className="comment-main-card">
@@ -93,38 +113,58 @@ function Comment({com}) {
                         <p className="comment-message">{com.message}</p>
                     </div>
                     <div className="comment-footer">
-                        <HorizontalIconButton icon="heart-add">2 likes</HorizontalIconButton>
+                        <HorizontalIconButton icon="heart-add">{com.likes} likes</HorizontalIconButton>
+                        <HorizontalIconButton icon="message">Reply</HorizontalIconButton>
                         {/* make horizontal icon button with number and label */}
                     </div>
                 </div>
             </div>
             <div className="comment-replies">
-            {com.replies.length > 0 ? <Comment com={com.replies[0]} /> : null}
+            {com.replies.map(c => <Comment com={c} />)}
             </div>
         </div>
     )
 }
 
+const comment_objects = [
+    {
+        name: "Aryan Godde",
+        date: "Jun 27 `20",
+        message: "This was definitely a unique one, I loved it. I have saved it for later when I go back to react since rn I am mostly focusing on design stuff. A great way to teach tho. Thanks Curtis!",
+        likes: 6,
+        replies: []
+    },
+    {
+        name: "Anurag Hazra",
+        date: "Jun 28 `20",
+        message: "And this article also teaches you recursion..",
+        likes: 2,
+        replies: [
+            {
+                name: "Dan Curtis",
+                date: "Jun 28 `20",
+                message: "I was hoping somebody would catch that 😄",
+                likes: 2,
+                replies: [],
+            },
+            {
+                name: "Liam McBride",
+                date: "July 17 `24",
+                message: "Hey, really great article! I'm currently in the process of remaking the page in React, I'm commenting this specifically here to test out the nesting functionality to reproduce 🤣",
+                likes: 0,
+                replies: [],
+            },
+        ]
+    },
+]
+
 function CommentFeed() {
     return (
         <div className="comment-feed">
-            <Comment com={
-                {
-                    name: "Anurag Hazra",
-                    date: "Jun 28 `20",
-                    message: "And this article also teaches you recursion..",
-                    likes: 2,
-                    replies: [
-                        {
-                            name: "Dan Curtis",
-                            date: "Jun 28 `20",
-                            message: "I was hoping somebody would catch that 😄",
-                            likes: 2,
-                            replies: [],
-                        },
-                    ]
-                }
-            } />
+            {comment_objects.map(c => <Comment com={c} />)}
+            {/* <Comment com={
+                comment_objects[0]
+            } /> */}
         </div>
     )
 }
